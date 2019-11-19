@@ -27,6 +27,7 @@
 
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVAppDelegate.h>
+@class PhoneContoller;
 
 @interface AppDelegate : CDVAppDelegate {}
 

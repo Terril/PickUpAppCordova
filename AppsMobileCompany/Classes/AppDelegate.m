@@ -27,8 +27,10 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import <AppsMobileCompany-Swift.h>
 #import "Constants.h"
 #import <AVFoundation/AVFoundation.h>
+@import Firebase;
 
 @implementation AppDelegate
 
@@ -61,7 +63,7 @@
         //self.window.rootViewController = self.viewController;
       //  [self.window makeKeyAndVisible];
     //}
-
+    [FIRApp configure];
     /** Allow for Audio background playing */
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     BOOL ok;
@@ -75,7 +77,7 @@
         [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), file] error:NULL];
     }
 
-    self.viewController = [[MainViewController alloc] init];
+    self.viewController = [[PhoneContoller alloc] init];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 

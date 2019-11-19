@@ -1,0 +1,6 @@
+module CountryPicker {
+  umbrella header "CountryPickerSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
