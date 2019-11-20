@@ -15,7 +15,7 @@ class PhoneContoller : UIViewController {
  
     
     override func viewDidLoad() {
-    
+    print("Hello Swift with PhoneContoller ")
      let configuration = Configuration(requestCode: { phone, completion in
              PhoneAuthProvider.provider().verifyPhoneNumber(phone, completion: completion)
          }, signIn: { verificationID, verificationCode, completion in

@@ -27,7 +27,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import <AppsMobileCompany-Swift.h>
 #import "Constants.h"
 #import <AVFoundation/AVFoundation.h>
 @import Firebase;
@@ -76,9 +75,14 @@
     for (NSString *file in tmpDirectory) {
         [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), file] error:NULL];
     }
+    
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CDVLaunchScreen" bundle: nil];
+    PhoneContoller * viewController = [storyboard instantiateViewControllerWithIdentifier:@"rootNavigationController"];
+    //[[PhoneContoller alloc] init];
+     self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
 
-    self.viewController = [[PhoneContoller alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+       return YES;
 }
 
 @end

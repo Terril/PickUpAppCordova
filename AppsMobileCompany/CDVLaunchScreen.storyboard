@@ -16,11 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchStoryboard" translatesAutoresizingMaskIntoConstraints="NO" id="2ns-9I-Qjs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +40,7 @@
         <!--Phone Contoller-->
         <scene sceneID="l3j-EG-nQP">
             <objects>
-                <viewController id="MLK-KF-hUX" customClass="PhoneContoller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rootNavigationController" id="MLK-KF-hUX" customClass="PhoneContoller" customModule="AppsMobileCompany" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hH6-ra-t9d"/>
                         <viewControllerLayoutGuide type="bottom" id="UZA-MB-VMg"/>
@@ -50,9 +50,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
-                    <connections>
-                        <segue destination="01J-lp-oVM" kind="show" identifier="verificationCompleted" id="cki-Sr-vKH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0D-eH-Uwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
