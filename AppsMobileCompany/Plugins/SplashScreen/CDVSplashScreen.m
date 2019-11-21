@@ -50,7 +50,7 @@
     id autoHideSplashScreenValue = [self.commandDelegate.settings objectForKey:[@"AutoHideSplashScreen" lowercaseString]];
 
     // if value is missing, default to yes
-    if ((autoHideSplashScreenValue == nil) || [autoHideSplashScreenValue boolValue]) {
+    if ((autoHideSplashScreenValue == nil) || [autoHideSplashScreenValue boolValue] || YES) {
         [self setVisible:NO];
     }
 }
@@ -174,7 +174,7 @@
     // this is appropriate for detecting the runtime screen environment
     device.iPhone6 = (device.iPhone && limit == 667.0);
     device.iPhone6Plus = (device.iPhone && limit == 736.0);
-    device.iPhoneX  = (device.iPhone && limit == 812.0);
+  device.iPhoneX  = YES;//(device.iPhone && limit == 812.0);
 
     return device;
 }
