@@ -87,6 +87,7 @@
 		B3C7B6FB9AFE4741BDD07D52 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E882F9F09DC490E984827DA /* MediaPlayer.framework */; };
 		B4F5F17673F14C99A76305EB /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A43D17EA3D4746A1AF4A983C /* CDVFile.m */; };
 		B694C09CFB6648E5A4E2B38C /* SBOfflineModeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0819206DDD54C318C116EC4 /* SBOfflineModeManager.m */; };
+		B822EDB02386308E00A5FAB0 /* PhoneVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B822EDAF2386308E00A5FAB0 /* PhoneVerificationViewController.m */; };
 		BE658DC90ED34A32839B1005 /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A196B353D6A4D978AF0D602 /* CDVLocalFilesystem.m */; };
 		BEACB6DD956E42CD9A736207 /* APPLocalNotificationOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2613B3FDB6C94816B450D044 /* APPLocalNotificationOptions.m */; };
 		C06222CC22D444AE9CE3CCE4 /* AppDelegate+notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF0C1C09DCA4651A91022D0 /* AppDelegate+notification.m */; };
@@ -307,6 +308,8 @@
 		B39F997A238451A300C76053 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B50FC4089EE743259875059A /* HCPFetchUpdateOptions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HCPFetchUpdateOptions.h; path = Chcp/Updater/HCPFetchUpdateOptions.h; sourceTree = "<group>"; };
 		B6E8AF9466444C6B8FB9B977 /* MainViewController+MusicControls.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "MainViewController+MusicControls.m"; path = "MusicControls/MainViewController+MusicControls.m"; sourceTree = "<group>"; };
+		B822EDAE2386308E00A5FAB0 /* PhoneVerificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneVerificationViewController.h; sourceTree = "<group>"; };
+		B822EDAF2386308E00A5FAB0 /* PhoneVerificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneVerificationViewController.m; sourceTree = "<group>"; };
 		B82C790EDE544428AC19AEFA /* UIImage+CropScaleOrientation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+CropScaleOrientation.m"; path = "Camera/UIImage+CropScaleOrientation.m"; sourceTree = "<group>"; };
 		B9119F5F771D4036B86F37E2 /* MainViewController+MusicControls.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "MainViewController+MusicControls.h"; path = "MusicControls/MainViewController+MusicControls.h"; sourceTree = "<group>"; };
 		BD47DC0D316D40E795FE52B3 /* HCPUpdateInstaller.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HCPUpdateInstaller.m; path = Chcp/Updater/HCPUpdateInstaller.m; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
 				B39F996923843E7300C76053 /* PhoneContoller.swift */,
 				B39F996823843E7300C76053 /* AppsMobileCompany-Bridging-Header.h */,
+				B822EDAE2386308E00A5FAB0 /* PhoneVerificationViewController.h */,
+				B822EDAF2386308E00A5FAB0 /* PhoneVerificationViewController.m */,
 			);
 			name = Classes;
 			path = AppsMobileCompany/Classes;
@@ -748,6 +753,7 @@
 				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 8TD3AYMWA6;
 						LastSwiftMigration = 1120;
 					};
 				};
@@ -930,6 +936,7 @@
 				DC3166B4F09944FC99E0C840 /* AppVersion.m in Sources */,
 				15ED49A2E9C7410B885C4B2E /* AppDelegate+APPAppEvent.m in Sources */,
 				F790F1B3E479486099C0937B /* CDVPlugin+APPAppEvent.m in Sources */,
+				B822EDB02386308E00A5FAB0 /* PhoneVerificationViewController.m in Sources */,
 				4D5A1AC5863B4B6DB30B3492 /* CDVBarcodeScanner.mm in Sources */,
 				2447C83DD4D8496E8E399236 /* UIImage+CropScaleOrientation.m in Sources */,
 				4E16896AEAEB40ED8270EBC9 /* CDVCamera.m in Sources */,
@@ -985,6 +992,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 8TD3AYMWA6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"AppsMobileCompany/Plugins/AdmobPro\"",
@@ -1020,6 +1028,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 8TD3AYMWA6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"AppsMobileCompany/Plugins/AdmobPro\"",

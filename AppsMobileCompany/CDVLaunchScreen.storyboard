@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MLK-KF-hUX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MLK-KF-hUX">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -37,6 +39,101 @@
             </objects>
             <point key="canvasLocation" x="183" y="363"/>
         </scene>
+        <!--Phone Verification View Controller-->
+        <scene sceneID="IFg-R8-vHw">
+            <objects>
+                <viewController storyboardIdentifier="PhoneVerificationViewController" id="mUz-Lw-0gN" customClass="PhoneVerificationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="psx-b2-2CZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="03A-hF-p3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wit-fH-jO3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsR-CK-HhX">
+                                <rect key="frame" x="345" y="52" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6h2-7d-9xf"/>
+                                    <constraint firstAttribute="width" constant="60" id="GE3-rm-BPz"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="mUz-Lw-0gN" eventType="touchUpInside" id="aht-xB-UqH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickupsLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Rx-L1L">
+                                <rect key="frame" x="107" y="81" width="200" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="JKh-lo-5PU"/>
+                                    <constraint firstAttribute="height" constant="150" id="JRQ-TD-u5A"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI9-Dz-bwM">
+                                <rect key="frame" x="20" y="281" width="374" height="48"/>
+                                <string key="text">Login
+Enter Phone Number and press Send Code</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0e-uc-BYZ">
+                                <rect key="frame" x="20" y="356" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GAb-qI-tG4"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mUz-Lw-0gN" id="5PV-Js-CAm"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-Xh-P8T">
+                                <rect key="frame" x="294" y="417" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9vC-6d-djX"/>
+                                    <constraint firstAttribute="width" constant="100" id="vuh-yL-W8r"/>
+                                </constraints>
+                                <state key="normal" title="Send Code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendCodeButtonPressed:" destination="mUz-Lw-0gN" eventType="touchUpInside" id="MyP-Lw-kGG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="g0e-uc-BYZ" secondAttribute="trailing" constant="20" id="0ry-P1-pvO"/>
+                            <constraint firstItem="Cfc-Rx-L1L" firstAttribute="centerX" secondItem="Wit-fH-jO3" secondAttribute="centerX" id="5Jf-R3-A5u"/>
+                            <constraint firstItem="VsR-CK-HhX" firstAttribute="top" secondItem="psx-b2-2CZ" secondAttribute="bottom" constant="8" id="F3C-YJ-Agu"/>
+                            <constraint firstItem="RHr-Xh-P8T" firstAttribute="top" secondItem="g0e-uc-BYZ" secondAttribute="bottom" constant="21" id="H2p-8l-Tj5"/>
+                            <constraint firstAttribute="trailing" secondItem="VsR-CK-HhX" secondAttribute="trailing" constant="9" id="Xkb-iJ-NHm"/>
+                            <constraint firstAttribute="trailing" secondItem="eI9-Dz-bwM" secondAttribute="trailing" constant="20" id="bzK-Gu-UEb"/>
+                            <constraint firstItem="g0e-uc-BYZ" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="gN8-ou-qeH"/>
+                            <constraint firstItem="eI9-Dz-bwM" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="iFX-Wg-MDT"/>
+                            <constraint firstItem="g0e-uc-BYZ" firstAttribute="top" secondItem="eI9-Dz-bwM" secondAttribute="bottom" constant="27" id="lJw-bE-9Ax"/>
+                            <constraint firstItem="Cfc-Rx-L1L" firstAttribute="top" secondItem="psx-b2-2CZ" secondAttribute="bottom" constant="37" id="vcp-Ei-WJS"/>
+                            <constraint firstAttribute="trailing" secondItem="RHr-Xh-P8T" secondAttribute="trailing" constant="20" id="vdU-m2-2Nw"/>
+                            <constraint firstItem="eI9-Dz-bwM" firstAttribute="top" secondItem="Cfc-Rx-L1L" secondAttribute="bottom" constant="50" id="yeW-FF-reo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSend" destination="RHr-Xh-P8T" id="L0t-x2-pP2"/>
+                        <outlet property="lblLoginMessage" destination="eI9-Dz-bwM" id="Qmj-hP-Qie"/>
+                        <outlet property="txtPhoneNumCode" destination="g0e-uc-BYZ" id="A3p-ZI-TAR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qHp-YS-D2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156.521739130435" y="362.94642857142856"/>
+        </scene>
         <!--Phone Contoller-->
         <scene sceneID="l3j-EG-nQP">
             <objects>
@@ -48,7 +145,7 @@
                     <view key="view" contentMode="scaleToFill" id="hXr-5k-xPN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0D-eH-Uwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,5 +155,6 @@
     </scenes>
     <resources>
         <image name="LaunchStoryboard" width="1366" height="1366"/>
+        <image name="pickupsLogo" width="1024" height="1024"/>
     </resources>
 </document>

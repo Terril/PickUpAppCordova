@@ -27,6 +27,7 @@
 
 #import "MainViewController.h"
 #import "Constants.h"
+#import "PhoneVerificationViewController.h"
 
 @implementation MainViewController
 
@@ -70,79 +71,26 @@
     // View defaults to full size.  If you want to customize the view's size, or its subviews (e.g. webView),
     // you can do so here.
 
-    if (isPreview) {
-        [self.navigationController setNavigationBarHidden:YES];
-
-        NSNotificationCenter *notifyCenter = [NSNotificationCenter defaultCenter];
-        [notifyCenter addObserverForName:@"CDVwebViewDidStartLoad"
-            object:nil
-            queue:nil
-            usingBlock:^(NSNotification *notification){
-                // Explore notification
-                NSLog(@"Notification found with:"
-                    "\r\n     name:     %@"
-                    "\r\n     object:   %@"
-                    "\r\n     userInfo: %@",
-                    [notification name],
-                    [notification object],
-                    [notification userInfo]
-                );
-
-                UIWebView *theWebView = [notification object];
-
-                if (isPreview && ![appDomain isEqualToString:@""] && ![appKey isEqualToString:@""]) {
-                    NSLog(@"appDomain: %@", appDomain);
-                    NSLog(@"appKey: %@", appKey);
-
-                    NSString *jsSetIdentifier = [[NSString alloc] initWithFormat:@"setTimeout(function () { IS_PREVIEW = true; DOMAIN = '%@'; APP_KEY = '%@'; BASE_PATH = '/' + APP_KEY; }, 1);", appDomain, appKey];
-
-                    [theWebView stringByEvaluatingJavaScriptFromString:jsSetIdentifier];
-
-                    appDomain = @"";
-                    appKey = @"";
-                }
-            }];
-    } else {
-        NSNotificationCenter *notifyCenter = [NSNotificationCenter defaultCenter];
-        [notifyCenter addObserverForName:@"CDVwebViewDidStartLoad"
-            object:nil
-            queue:nil
-            usingBlock:^(NSNotification *notification) {
-                UIWebView *theWebView = [notification object];
-
-                NSString *jsSetIdentifier = [[NSString alloc] initWithFormat:@"IS_PREVIEW = false;"];
-                [theWebView stringByEvaluatingJavaScriptFromString:jsSetIdentifier];
-            }];
-    }
-
-
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
-    if (isPreview) {
-        //[[webViewInfo layer] setCornerRadius:5.00f];
-        //[[webViewInfo layer] setBackgroundColor:[getLightWhiteColor() CGColor]];
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self showPhoneVerifyVC];
+  });
+}
 
-        //webViewInfo.textColor = getWhiteColor();
-        //webViewInfo.text = [[NSString alloc] initWithFormat:@"%@", NSLocalizedString(@"Tap twice to go back to apps list.", nil)];
-        //[webViewInfo sizeToFit];
-        //webViewInfo.frame = CGRectMake(webViewInfo.frame.origin.x,
-        //                               webViewInfo.frame.origin.y,
-        //                               webViewInfo.frame.size.width + 10,
-        //                               webViewInfo.frame.size.height + 5);
+-(void)showPhoneVerifyVC {
 
-        //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-        //tap.numberOfTapsRequired = 2;
-        //tap.delegate = self;
-
-        //[self.webView addGestureRecognizer:tap];
-
-        //[self performSelector:@selector(hideWebViewInfo) withObject:nil afterDelay:5.0];
-    }
+  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CDVLaunchScreen" bundle: nil];
+  PhoneVerificationViewController * phoneviewController = [storyboard instantiateViewControllerWithIdentifier:@"PhoneVerificationViewController"];
+  [self presentViewController:phoneviewController animated:YES completion:nil];
 }
 
 - (void)viewDidUnload
@@ -159,9 +107,6 @@
     return YES;
 }
 
-- (void)tapAction:(id)ignored {
-    [self closeApplication];
-}
 
 - (void)hideWebViewInfo {
     //[UIView animateWithDuration:0.3 animations:^{
