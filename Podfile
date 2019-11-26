@@ -5,4 +5,5 @@ target 'AppsMobileCompany' do
 	pod 'FirebaseMessaging', '~> 2.0.0'
   pod 'Firebase/Auth'
   pod 'PhoneVerificationController'
+  pod "FlagPhoneNumber"
 end

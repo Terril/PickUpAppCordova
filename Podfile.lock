@@ -25,6 +25,9 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FlagPhoneNumber (0.7.8):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.7.8)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.7.8)
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
@@ -57,6 +60,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - FirebaseMessaging (~> 2.0.0)
+  - FlagPhoneNumber
   - PhoneVerificationController
 
 SPEC REPOS:
@@ -72,6 +76,7 @@ SPEC REPOS:
     - CountryPickerSwift
     - Firebase
     - FirebaseAuth
+    - FlagPhoneNumber
     - GTMSessionFetcher
     - PhoneNumberKit
     - PhoneVerificationController
@@ -84,6 +89,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  FlagPhoneNumber: 366348d1d54f4828140c0c7f33ccb694c34ddcdd
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -91,6 +97,6 @@ SPEC CHECKSUMS:
   PhoneVerificationController: 74cf58ebd517135d350011ffbff05a9429a72e51
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 1c25ede76ccd9fe5f7ca2cf6517edf5706e5ef85
+PODFILE CHECKSUM: 044344d656ddea4de7943c811d7623d1685120ee
 
 COCOAPODS: 1.8.4

@@ -9,7 +9,7 @@
 
 @interface PhoneVerificationViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lblLoginMessage;
-@property (weak, nonatomic) IBOutlet UITextField *txtPhoneNumCode;
+@property (weak, nonatomic) IBOutlet FPNTextField *txtPhoneNumCode;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 
 @property (nonatomic) NSString *verificationID;
@@ -21,8 +21,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    _txtPhoneNumCode.setFlag(for: .KE)
+    _txtPhoneNumCode.set(phoneNumber: "724 087525")
+    [self.delegate _txtPhoneNumCode:self];
   self.isPhoneNumberMode = true;
   [self configureUI];
+
 }
 
 - (IBAction)sendCodeButtonPressed:(id)sender {
@@ -135,7 +139,21 @@
   }
 }
 
+-(void)fpnDidSelectCountry: (NSString *)name: (NSString *)dialCode: (NSString *)code {
+   print(name, dialCode, code) // Output "France", "+33", "FR"
+}
 
+-(void)fpnDidValidatePhoneNumber: (FPNTextField *)textField: (BOOL *) isValid {
+   if isValid {
+      // Do something...
+      textField.getFormattedPhoneNumber(format: .International),  // Output "+33 6 00 00 00 01"
+      textField.getFormattedPhoneNumber(format: .National),       // Output "06 00 00 00 01"
+      textField.getFormattedPhoneNumber(format: .RFC3966),        // Output "tel:+33-6-00-00-00-01"
+      textField.getRawPhoneNumber()                               // Output "600000001"
+   } else {
+      // Do something...
+   }
+}
 /*
  #pragma mark - Navigation
 

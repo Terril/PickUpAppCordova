@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MLK-KF-hUX">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MLK-KF-hUX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +49,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsR-CK-HhX">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsR-CK-HhX">
                                 <rect key="frame" x="345" y="52" width="60" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -73,20 +71,18 @@
                                     <constraint firstAttribute="height" constant="150" id="JRQ-TD-u5A"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI9-Dz-bwM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Phone Number and press Verify Phone Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI9-Dz-bwM">
                                 <rect key="frame" x="20" y="281" width="374" height="48"/>
-                                <string key="text">Login
-Enter Phone Number and press Send Code</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0e-uc-BYZ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="+254 724 087525" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g0e-uc-BYZ" customClass="FPNTextField" customModule="FlagPhoneNumber">
                                 <rect key="frame" x="20" y="356" width="374" height="40"/>
+                                <accessibility key="accessibilityConfiguration" hint="+254 724 087525"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GAb-qI-tG4"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
                                 <connections>
@@ -94,31 +90,47 @@ Enter Phone Number and press Send Code</string>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-Xh-P8T">
-                                <rect key="frame" x="294" y="417" width="100" height="40"/>
+                                <rect key="frame" x="20" y="436" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="9vC-6d-djX"/>
-                                    <constraint firstAttribute="width" constant="100" id="vuh-yL-W8r"/>
                                 </constraints>
-                                <state key="normal" title="Send Code">
+                                <state key="normal" title="VERIFY PHONE NUMBER">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="sendCodeButtonPressed:" destination="mUz-Lw-0gN" eventType="touchUpInside" id="MyP-Lw-kGG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-3P-XYj">
+                                <rect key="frame" x="20" y="511" width="374" height="81.5"/>
+                                <string key="text">By Tapping "Verify Phone Number", you are indicating that you accept our Terms of Service and Privacy Policy. An SMS may be sent. Message &amp; data rate may apply.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-52-Ojl" userLabel="countryCodePickerView">
+                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="g0e-uc-BYZ" secondAttribute="trailing" constant="20" id="0ry-P1-pvO"/>
                             <constraint firstItem="Cfc-Rx-L1L" firstAttribute="centerX" secondItem="Wit-fH-jO3" secondAttribute="centerX" id="5Jf-R3-A5u"/>
+                            <constraint firstItem="RHr-Xh-P8T" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="AtB-tW-YdQ"/>
                             <constraint firstItem="VsR-CK-HhX" firstAttribute="top" secondItem="psx-b2-2CZ" secondAttribute="bottom" constant="8" id="F3C-YJ-Agu"/>
-                            <constraint firstItem="RHr-Xh-P8T" firstAttribute="top" secondItem="g0e-uc-BYZ" secondAttribute="bottom" constant="21" id="H2p-8l-Tj5"/>
+                            <constraint firstItem="RHr-Xh-P8T" firstAttribute="top" secondItem="g0e-uc-BYZ" secondAttribute="bottom" constant="40" id="H2p-8l-Tj5"/>
+                            <constraint firstItem="f7d-52-Ojl" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" id="X0u-Yt-eAt"/>
+                            <constraint firstItem="GlG-3P-XYj" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="XOt-MQ-aci"/>
                             <constraint firstAttribute="trailing" secondItem="VsR-CK-HhX" secondAttribute="trailing" constant="9" id="Xkb-iJ-NHm"/>
+                            <constraint firstItem="03A-hF-p3L" firstAttribute="top" secondItem="f7d-52-Ojl" secondAttribute="bottom" id="ZOg-M8-6bJ"/>
                             <constraint firstAttribute="trailing" secondItem="eI9-Dz-bwM" secondAttribute="trailing" constant="20" id="bzK-Gu-UEb"/>
-                            <constraint firstItem="g0e-uc-BYZ" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="gN8-ou-qeH"/>
+                            <constraint firstAttribute="trailing" secondItem="GlG-3P-XYj" secondAttribute="trailing" constant="20" id="hsI-lz-we2"/>
                             <constraint firstItem="eI9-Dz-bwM" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="iFX-Wg-MDT"/>
                             <constraint firstItem="g0e-uc-BYZ" firstAttribute="top" secondItem="eI9-Dz-bwM" secondAttribute="bottom" constant="27" id="lJw-bE-9Ax"/>
+                            <constraint firstItem="GlG-3P-XYj" firstAttribute="top" secondItem="RHr-Xh-P8T" secondAttribute="bottom" constant="35" id="mxZ-Cn-AbL"/>
+                            <constraint firstAttribute="trailing" secondItem="f7d-52-Ojl" secondAttribute="trailing" id="sET-R7-93b"/>
+                            <constraint firstItem="g0e-uc-BYZ" firstAttribute="leading" secondItem="Wit-fH-jO3" secondAttribute="leading" constant="20" id="uvS-cU-VJ1"/>
                             <constraint firstItem="Cfc-Rx-L1L" firstAttribute="top" secondItem="psx-b2-2CZ" secondAttribute="bottom" constant="37" id="vcp-Ei-WJS"/>
                             <constraint firstAttribute="trailing" secondItem="RHr-Xh-P8T" secondAttribute="trailing" constant="20" id="vdU-m2-2Nw"/>
                             <constraint firstItem="eI9-Dz-bwM" firstAttribute="top" secondItem="Cfc-Rx-L1L" secondAttribute="bottom" constant="50" id="yeW-FF-reo"/>
