@@ -81,7 +81,6 @@
 		A6A6CC1D507B4D53A62B4964 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5FD146508C4385BBD6450E /* CoreBluetooth.framework */; };
 		A93D88EFD9624212BEFF6BD4 /* HCPContentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDB569E8E1F4DDCB090CCC8 /* HCPContentConfig.m */; };
 		AE2BC705A83F48009D34F4C9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAC3430FE5C4FBF81A6CAAC /* OpenGLES.framework */; };
-		B39F996A23843E7300C76053 /* PhoneContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39F996923843E7300C76053 /* PhoneContoller.swift */; };
 		B39F997B238451A300C76053 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B39F997A238451A300C76053 /* GoogleService-Info.plist */; };
 		B3C092F7A8DC4AA6ADD26D5B /* HCPXmlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D5F0763E604B1EBE741A28 /* HCPXmlConfig.m */; };
 		B3C7B6FB9AFE4741BDD07D52 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E882F9F09DC490E984827DA /* MediaPlayer.framework */; };
@@ -304,7 +303,6 @@
 		AF94720F8BBB42FCB183B2B5 /* HCPManifestFile.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HCPManifestFile.m; path = Chcp/Model/HCPManifestFile.m; sourceTree = "<group>"; };
 		B1484275F3D4474DACB56C62 /* HCPXmlTags.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HCPXmlTags.m; path = Chcp/Config/HCPXmlTags.m; sourceTree = "<group>"; };
 		B39F996823843E7300C76053 /* AppsMobileCompany-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppsMobileCompany-Bridging-Header.h"; sourceTree = "<group>"; };
-		B39F996923843E7300C76053 /* PhoneContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneContoller.swift; sourceTree = "<group>"; };
 		B39F997A238451A300C76053 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B50FC4089EE743259875059A /* HCPFetchUpdateOptions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HCPFetchUpdateOptions.h; path = Chcp/Updater/HCPFetchUpdateOptions.h; sourceTree = "<group>"; };
 		B6E8AF9466444C6B8FB9B977 /* MainViewController+MusicControls.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "MainViewController+MusicControls.m"; path = "MusicControls/MainViewController+MusicControls.m"; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
-				B39F996923843E7300C76053 /* PhoneContoller.swift */,
 				B39F996823843E7300C76053 /* AppsMobileCompany-Bridging-Header.h */,
 				B822EDAE2386308E00A5FAB0 /* PhoneVerificationViewController.h */,
 				B822EDAF2386308E00A5FAB0 /* PhoneVerificationViewController.m */,
@@ -437,7 +434,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				B39F997A238451A300C76053 /* GoogleService-Info.plist */,
@@ -732,7 +729,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
-				547F62D2AA6CC5933524272F /* [CP] Copy Pods Resources */,
+				6EE14230695F887331003233 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -767,7 +764,7 @@
 				en,
 				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -851,31 +848,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js";
+			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js\n";
 			showEnvVarsInLog = 0;
 		};
-		547F62D2AA6CC5933524272F /* [CP] Copy Pods Resources */ = {
+		6EE14230695F887331003233 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AppsMobileCompany/Pods-AppsMobileCompany-resources.sh",
-				"${PODS_ROOT}/CountryPickerSwift/CountryPicker/Classes/CountryView.xib",
-				"${PODS_ROOT}/CountryPickerSwift/CountryPicker/Assets/CountryPicker.bundle",
-				"${PODS_ROOT}/CountryPickerSwift/CountryPicker/Classes/Flags.xcassets",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FlagPhoneNumber/FlagPhoneNumber.bundle",
-				"${PODS_ROOT}/PhoneNumberKit/PhoneNumberKit/Resources/PhoneNumberMetadata.json",
-				"${PODS_CONFIGURATION_BUILD_DIR}/PhoneVerificationController/PhoneVerificationControllerResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CountryView.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CountryPicker.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FlagPhoneNumber.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhoneNumberMetadata.json",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PhoneVerificationControllerResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -929,7 +918,6 @@
 				3FB29CC80E9C46BD9750BC88 /* CDVWKWebViewEngine+HCPPlugin_ReadAccessURL.m in Sources */,
 				E709111931C040E7981DC1FA /* CDVSplashScreen.m in Sources */,
 				C890DD2EC42942B6915674BC /* CDVViewController+SplashScreen.m in Sources */,
-				B39F996A23843E7300C76053 /* PhoneContoller.swift in Sources */,
 				C06222CC22D444AE9CE3CCE4 /* AppDelegate+notification.m in Sources */,
 				6C60EEC9862648C295C8D987 /* PushPlugin.m in Sources */,
 				6E4CB5B75BDA48AFB671F157 /* WebViewPlugin.m in Sources */,

@@ -1,5 +1,4 @@
 PODS:
-  - CountryPickerSwift (1.8.2)
   - Firebase/Auth (4.13.0):
     - Firebase/Core
     - FirebaseAuth (= 4.6.1)
@@ -25,9 +24,10 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
-  - FlagPhoneNumber (0.7.8):
-    - FlagPhoneNumber/libPhoneNumberiOS (= 0.7.8)
-  - FlagPhoneNumber/libPhoneNumberiOS (0.7.8)
+  - FirebaseUI/Auth (4.5.5):
+    - Firebase/Auth (~> 4.2)
+  - FirebaseUI/Phone (4.5.5):
+    - FirebaseUI/Auth
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
@@ -46,22 +46,13 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - PhoneNumberKit (2.0.0):
-    - PhoneNumberKit/PhoneNumberKitCore (= 2.0.0)
-    - PhoneNumberKit/UIKit (= 2.0.0)
-  - PhoneNumberKit/PhoneNumberKitCore (2.0.0)
-  - PhoneNumberKit/UIKit (2.0.0):
-    - PhoneNumberKit/PhoneNumberKitCore
-  - PhoneVerificationController (2.0.2):
-    - CountryPickerSwift (~> 1.4)
-    - PhoneNumberKit (~> 2.0.0)
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - FirebaseMessaging (~> 2.0.0)
-  - FlagPhoneNumber
-  - PhoneVerificationController
+  - FirebaseUI/Auth
+  - FirebaseUI/Phone
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -73,30 +64,24 @@ SPEC REPOS:
     - nanopb
     - Protobuf
   trunk:
-    - CountryPickerSwift
     - Firebase
     - FirebaseAuth
-    - FlagPhoneNumber
+    - FirebaseUI
     - GTMSessionFetcher
-    - PhoneNumberKit
-    - PhoneVerificationController
 
 SPEC CHECKSUMS:
-  CountryPickerSwift: b2cd8b391a0222bd9a97d09ea30426303adac810
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
-  FlagPhoneNumber: 366348d1d54f4828140c0c7f33ccb694c34ddcdd
+  FirebaseUI: 7f149d40db1a67c459df16540256b66d8f8e8c70
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  PhoneNumberKit: 073b3cef30c2a64ddcd623ea5953bc84bb5b3fc4
-  PhoneVerificationController: 74cf58ebd517135d350011ffbff05a9429a72e51
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 044344d656ddea4de7943c811d7623d1685120ee
+PODFILE CHECKSUM: d2467adab7cb7702f5395a796b5b087ee252ba90
 
 COCOAPODS: 1.8.4

@@ -4,6 +4,6 @@ target 'AppsMobileCompany' do
 	project 'AppsMobileCompany.xcodeproj'
 	pod 'FirebaseMessaging', '~> 2.0.0'
   pod 'Firebase/Auth'
-  pod 'PhoneVerificationController'
-  pod "FlagPhoneNumber"
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Phone'
 end

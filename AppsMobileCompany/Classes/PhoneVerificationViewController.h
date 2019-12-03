@@ -9,11 +9,15 @@
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVCommandDelegateImpl.h>
 #import <Cordova/CDVCommandQueue.h>
+
 @import Firebase;
+@import FirebaseAuthUI;
+@import FirebasePhoneAuthUI;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PhoneVerificationViewController<FPNTextFieldDelegate> : CDVViewController
+@interface PhoneVerificationViewController<FPNTextFieldDelegate>
+ : CDVViewController
 
 @end
 

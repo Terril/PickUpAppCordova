@@ -9,7 +9,7 @@
 
 @interface PhoneVerificationViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lblLoginMessage;
-@property (weak, nonatomic) IBOutlet FPNTextField *txtPhoneNumCode;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 
 @property (nonatomic) NSString *verificationID;
@@ -21,11 +21,25 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    _txtPhoneNumCode.setFlag(for: .KE)
-    _txtPhoneNumCode.set(phoneNumber: "724 087525")
-    [self.delegate _txtPhoneNumCode:self];
+   // _phoneNumberTextField.setFlag(for: .KE)
+  //  _phoneNumberTextField.set(phoneNumber: "724 087525")
+  //  [self.delegate _phoneNumberTextField:self];
   self.isPhoneNumberMode = true;
   [self configureUI];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self startPhoneAuth];
+    });
+
+}
+
+-(void)startPhoneAuth {
+
+    [FUIAuth defaultAuthUI].delegate = self; // delegate should be retained by you!
+    FUIPhoneAuth *phoneProvider = [[FUIPhoneAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]];
+    [FUIAuth defaultAuthUI].providers = @[phoneProvider];
+//    FUIPhoneAuth *phoneProvider = [FUIAuth defaultAuthUI].providers.firstObject;
+    [phoneProvider signInWithPresentingViewController:self phoneNumber:nil];
 
 }
 
@@ -45,7 +59,7 @@
 
 -(void)sendPhoneNumber {
 
-  NSString *phNUmber = _txtPhoneNumCode.text;
+  NSString *phNUmber = self.phoneNumberTextField.text;
   if (phNUmber.length > 0) {
     [FIRPhoneAuthProvider.provider
      verifyPhoneNumber:phNUmber
@@ -68,7 +82,7 @@
 
 -(void)checkVerificationCode {
 
-  NSString *code = _txtPhoneNumCode.text;
+  NSString *code = self.phoneNumberTextField.text;
   if (code.length > 0) {
 
     FIRAuthCredential *credential =
@@ -100,17 +114,17 @@
 -(void)configureUI {
 
   if (self.isPhoneNumberMode) {
-    self.txtPhoneNumCode.text = nil;
-    self.txtPhoneNumCode.textContentType = UITextContentTypeTelephoneNumber;
+    _phoneNumberTextField.text = nil;
+    _phoneNumberTextField.textContentType = UITextContentTypeTelephoneNumber;
     self.lblLoginMessage.text = @"Login\nEnter Phone Number and press Send Code";
     [self.btnSend setTitle:@"Send Code" forState:UIControlStateNormal];
-    [self.txtPhoneNumCode resignFirstResponder];
+    [_phoneNumberTextField resignFirstResponder];
   } else {
-    self.txtPhoneNumCode.text = nil;
-    self.txtPhoneNumCode.textContentType = UITextContentTypeOneTimeCode;
+    _phoneNumberTextField.text = nil;
+    _phoneNumberTextField.textContentType = UITextContentTypeOneTimeCode;
     self.lblLoginMessage.text = @"Verify\nEnter 6 digit code recieved";
     [self.btnSend setTitle:@"Verify Code" forState:UIControlStateNormal];
-    [self.txtPhoneNumCode resignFirstResponder];
+    [_phoneNumberTextField resignFirstResponder];
   }
 }
 
@@ -135,25 +149,29 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   UITouch * touch = [touches anyObject];
   if(touch.phase == UITouchPhaseBegan) {
-    [self.txtPhoneNumCode resignFirstResponder];
+    [_phoneNumberTextField resignFirstResponder];
   }
 }
 
--(void)fpnDidSelectCountry: (NSString *)name: (NSString *)dialCode: (NSString *)code {
-   print(name, dialCode, code) // Output "France", "+33", "FR"
-}
+//- (void)fpnDidSelectCountryWithName:(NSString * _Nonnull)name dialCode:(NSString * _Nonnull)dialCode code:(NSString * _Nonnull)code {
+//    NSLog(@"%@ %@ %@", name, dialCode, code);
+//}
 
--(void)fpnDidValidatePhoneNumber: (FPNTextField *)textField: (BOOL *) isValid {
-   if isValid {
-      // Do something...
-      textField.getFormattedPhoneNumber(format: .International),  // Output "+33 6 00 00 00 01"
-      textField.getFormattedPhoneNumber(format: .National),       // Output "06 00 00 00 01"
-      textField.getFormattedPhoneNumber(format: .RFC3966),        // Output "tel:+33-6-00-00-00-01"
-      textField.getRawPhoneNumber()                               // Output "600000001"
-   } else {
-      // Do something...
-   }
-}
+//-(void)fpnDidValidatePhoneNumberWithTextField:(FPNTextField * _Nonnull)textField isValid:(BOOL)isValid {
+//    UIImage *img = isValid ? [UIImage imageNamed: @"success"] : [UIImage imageNamed: @"error"];
+//
+//    _phoneNumberTextField.rightViewMode = UITextFieldViewModeAlways;
+//    _phoneNumberTextField.rightView = [[UIImageView alloc] initWithImage: img];
+//
+//    NSLog(@"is valid: %@", isValid ? @"Yes" : @"No");
+////    NSLog(@"E164 Format: %@", [_phoneNumberTextField getFormattedPhoneNumberWithFormat: FPNFormatE164]);
+////    NSLog(@"International Format: %@", [_phoneNumberTextField getFormattedPhoneNumberWithFormat: FPNFormatInternational]);
+////    NSLog(@"National Format: %@", [_phoneNumberTextField getFormattedPhoneNumberWithFormat: FPNFormatNational]);
+////    NSLog(@"RFC3966 Format: %@", [_phoneNumberTextField getFormattedPhoneNumberWithFormat: FPNFormatRFC3966]);
+////    NSLog(@"Raw: %@", [_phoneNumberTextField getRawPhoneNumber]);
+//}
+
+
 /*
  #pragma mark - Navigation
 

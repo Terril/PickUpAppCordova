@@ -1,6 +1,0 @@
-module PhoneVerificationController {
-  umbrella header "PhoneVerificationController-umbrella.h"
-
-  export *
-  module * { export * }
-}

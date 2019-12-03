@@ -139,7 +139,7 @@
                     <connections>
                         <outlet property="btnSend" destination="RHr-Xh-P8T" id="L0t-x2-pP2"/>
                         <outlet property="lblLoginMessage" destination="eI9-Dz-bwM" id="Qmj-hP-Qie"/>
-                        <outlet property="txtPhoneNumCode" destination="g0e-uc-BYZ" id="A3p-ZI-TAR"/>
+                        <outlet property="phoneNumberTextField" destination="g0e-uc-BYZ" id="HJ2-Kq-Edi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHp-YS-D2e" userLabel="First Responder" sceneMemberID="firstResponder"/>

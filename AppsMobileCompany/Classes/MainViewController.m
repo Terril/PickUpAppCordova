@@ -88,9 +88,18 @@
 
 -(void)showPhoneVerifyVC {
 
+//
+
   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"CDVLaunchScreen" bundle: nil];
-  PhoneVerificationViewController * phoneviewController = [storyboard instantiateViewControllerWithIdentifier:@"PhoneVerificationViewController"];
-  [self presentViewController:phoneviewController animated:YES completion:nil];
+//  PhoneVerificationViewController * phoneviewController = [storyboard instantiateViewControllerWithIdentifier:@"PhoneVerificationViewController"];
+//  [self presentViewController:phoneviewController animated:YES completion:nil];
+    
+    
+        [FUIAuth defaultAuthUI].delegate = self; // delegate should be retained by you!
+        FUIPhoneAuth *phoneProvider = [[FUIPhoneAuth alloc] initWithAuthUI:[FUIAuth defaultAuthUI]];
+        [FUIAuth defaultAuthUI].providers = @[phoneProvider];
+    //    FUIPhoneAuth *phoneProvider = [FUIAuth defaultAuthUI].providers.firstObject;
+        [phoneProvider signInWithPresentingViewController:self phoneNumber:nil];
 }
 
 - (void)viewDidUnload
