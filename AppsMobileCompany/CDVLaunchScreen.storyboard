@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="183" y="363"/>
         </scene>
-        <!--Phone Verification View Controller-->
+        <!--View Controller-->
         <scene sceneID="IFg-R8-vHw">
             <objects>
-                <viewController storyboardIdentifier="PhoneVerificationViewController" id="mUz-Lw-0gN" customClass="PhoneVerificationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneVerificationViewController" id="mUz-Lw-0gN" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="psx-b2-2CZ"/>
                         <viewControllerLayoutGuide type="bottom" id="03A-hF-p3L"/>
